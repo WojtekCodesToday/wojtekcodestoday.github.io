@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <style type="text/css" media="all">
+    body { font-family: "Open Sans"; font-style: normal; font-variant: normal; font-weight: 700; line-height: 21px; } h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 13px; }
+    
+    .title{
+      margin-left: 4%;
+    }
+    
+    .webpage{
+      margin-top: 0px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    
+    #menubar{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: #FFFFFF;
+      box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    #hamburger01{
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 300%;
+      margin-top: 15px;
+      margin-right: 4%;
+    }
+    
+.searchofPage{
+  text-align: center;
+}
+    
+#mySearch {
+    /* Style the search box */
+  width: 90%;
+  font-size: 18px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-right: -18%;
+  margin-left: -11%;
+}
+
+/* Style the navigation menu */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Style the navigation links */
+#myMenu li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+    /* -------------------- */
+    
+    .website{
+      margin-top: -2px;
+      overflow-x: none;
+      overflow-y: auto;
+      
+    }
+    
+    /* Style the tab */
+.tab {
+  background-color: #ffffff;
+  overflow-y: none;
+  overflow-x: auto;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 16px;
+  transition: 0.3s;
+}
+
+/* Style the tab content */
+.tabcontent {
+  position: absolute;
+  display: none;
+  z-index: -5;
+  border-top: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: 135px;
+}
+
+.tabcontent {
+  animation: fadeEffect01 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect01 {
+  from {opacity: 0;}
+}
+
+.tabcontent-title{
+  text-align: center;
+}
+
+#searchicon{
+  position: absolute;
+  left: 0;
+  margin-left: 0.5%;
+}
+  </style>
+  
+  <script>
+//<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+function searchPage() {
+  // Declare variables
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+</script>
+	  <div id="menubar">
+	 <h1 class="title" onclick="openWebsite(event, 'Home')">Wojtek Tech Store</h1>
+<div class="searchofPage">
+  
+  <svg id="searchicon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+  
+<input type="text" id="mySearch" onkeyup="searchPage()" placeholder= Search... >
+</div>
+<div class="tab">
+  </div>
+<div id="myMenu001">
+<ul id="myMenu">
+  <li><a href="#" onclick="openWebsite(event, 'Home')">Home</a></li>
+  <li><a href="#" onclick="openWebsite(event, 'Paris')">CSS</a></li>
+  <li><a href="#" onclick="openWebsite(event, 'Tokyo')">JavaScript</a></li>
+  <li><a href="#">PHP</a></li>
+  <li><a href="#">Python</a></li>
+  <li><a href="#">jQuery</a></li>
+  <li><a href="#">SQL</a></li>
+  <li><a href="#">Bootstrap</a></li>
+  <li><a href="https://github.com/wojtekcodestoday/wojtekcodestoday.github.io">Github</a></li>
+</ul>
+</div>
+<div class="website">
+  <script type="text/javascript" charset="utf-8">
+    function openWebsite(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+	    <!-- Tab links -->
+  <title>Wojtek Tech Store</title>
+
+
+<div id="Home" class="tabcontent">
+<!-- Tab content -->
+  <h1 class="tabcontent-title">Home</h1>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  
+    <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+</div>
+</body>
+</html>
